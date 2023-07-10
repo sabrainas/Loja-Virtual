@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Loja virtual</title>
+        <!-- Meta tags Obrigatórias -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+        <script src="https://kit.fontawesome.com/2dbb9c3155.js" crossorigin="anonymous"></script>
+
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    </head>
+
+    <body>
+
+        <!-- inicio header -->
+        <header>
+            <nav class="navbar navbar-expand-md bgDark navbar-light">
+                <div class="container-fluid">
+                    <div>
+                        <a href="#" class="navbar-brand" style="color: white; font-size: 1.2em;">VRmodas</a> <!--logo-->
+                        <input type="text" placeholder="O que você procura?"> <!--pesquisa-->
+                        <i class="fa-solid fa-magnifying-glass lupa"></i>
+                    </div>
+
+                    <button class="navbar-toggler" data-toggle="collapse" data-target="#nav-principal"> 
+                        <i class="fas fa-bars text-white"></i>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="nav-principal">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item icons"><i class="fa-solid fa-ticket"></i></li>
+                            <li class="nav-item icons"><i class="fa-regular fa-heart"></i></i></li>
+                            <li class="nav-item icons"><i class="fa-solid fa-cart-shopping"></i></li>
+                            <li class="nav-item icons perfil"><i class="fa-solid fa-circle-user"></i></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <!-- fim header -->
+        
+        <!-- carrossel -->
+        <section class=" mt-2 carrossel ">
+            <div class="slide">
+                <img src="img/carrossel-1.png" class="img-fluid imgSlide" alt="">
+            </div>
+            <div class="slide">
+                <img src="img/carrossel-2.png" class="img-fluid imgSlide" alt="">
+            </div>
+            <div class="slide">
+                <img src="img/carrossel-3.png" class="img-fluid imgSlide" alt="">
+            </div>
+            
+            <a class="btnAnterior" onclick="mudarSlide(-1)">&lsaquo;</a>
+            <a class="btnProximo" onclick="mudarSlide(1)">&rsaquo;</a>
+            
+            <div style="text-align: center;">
+                <span class="indicador" onclick="slideAtual(1)"></span>
+                <span class="indicador" onclick="slideAtual(2)"></span>
+                <span class="indicador" onclick="slideAtual(3)"></span>
+            </div>
+        </section>
+
+        
+        <div class="container">
+
+            <section id="vitrine">
+                <h2>Produtos:</h2>
+                <div id="produtos">
+                    <div class="cardProdutos">
+                        <img class="img-fluid imgProdutos" src="img/terno.jpg" alt="">
+                        <p class="titleProduto">Terno social preto</p>
+                        <button type="button" class="btn btn-primary btnCarrinho">Adicionar ao carrinho!</button>
+                    </div>
+                    <div  class="cardProdutos">
+                        <img class="img-fluid imgProdutos" src="img/calca.jpg" alt="">
+                        <p class="titleProduto">Calça social masculina</p>
+                        <button type="button" class="btn btn-primary btnCarrinho">Adicionar ao carrinho!</button>
+                    </div>
+                    <div  class="cardProdutos">
+                        <img class="img-fluid imgProdutos" src="img/sapato.jpg" alt="">
+                        <p class="titleProduto">Sapato social preto</p>
+                        <button type="button" class="btn btn-primary btnCarrinho">Adicionar ao carrinho!</button>
+                    </div>
+                    <div  class="cardProdutos">
+                        <img class="img-fluid imgProdutos" src="img/relogio.jpg" alt="">
+                        <p class="titleProduto">Relógio</p>
+                        <button type="button" class="btn btn-primary btnCarrinho">Adicionar ao carrinho!</button>
+                    </div>
+                </div><!--produtos-->
+
+                <!-- paginaçao -->
+                <nav>
+                    <ul class="pagination">
+                        <li class="page-item">
+                            <a class="page-link" aria-label="Anterior" href="#">
+                                <span aria-hidden="true">&laquo;
+                                </span>
+                                <span class="sr-only">Anterior</span>
+                            </a>
+                        </li>
+                        <li class="page-item"><a href="#" class="page-link">1</a></li>
+                        <li class="page-item"><a href="#" class="page-link">2</a></li>
+                        <li class="page-item"><a href="#" class="page-link">3</a></li>
+                        <li class="page-item">
+                            <a href="#" class="page-link" aria-label="Próximo"><span aria-hidden="true">&raquo;</span>
+                            <span class="sr-only">Próximo</span></a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <h2>Carrinho:</h2>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+
+                            <table class="table table-striped tableCarrinho">
+
+                                <tbody>
+                                    <!-- <tr class="produtoCarrinho">
+                                        <td class="itemCarrinho">
+                                            <img src="img/terno.jpg" class="img-fluid imgCarrinho" alt="">
+                                            <span class="nameProduct">Terno social preto</span>
+                                        </td>
+                                        <td>
+                                            <span>Quantidade </span>
+                                            <input type="number" class="qtdCarrinho" min="1" value="1">
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-danger removerProduto" type="button" >Remover</button>
+                                        </td>
+                                    </tr> -->
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- cadastro -->
+            <section id="cadastro">
+                <h2>Pré-cadastro:</h2>
+                <form>
+                    <fieldset>
+                        <div class="form-row"> <!--inicio form-->
+
+                            <div class="form-group col-md-4">
+                                <label>Primeiro nome</label>
+                                <input type="text" class="form-control" required>
+                            </div>
+    
+                            <div class=" form-group col-md-4">
+                                <label>Segundo nome</label>
+                                <input type="text" class="form-control" required>
+                            </div>
+    
+                            <div class="col-md-4 form-group">
+                                <label>Email</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                    <div class="input-group-text">@</div>
+                                    </div>
+                                    <input type="text" class="form-control" required>
+                                </div>
+                            </div>
+    
+                            <div class=" form-group col-md-6">
+                                <label>Cidade</label>
+                                <input type="text" class="form-control" required>
+                            </div>
+    
+                            <div class="form-group col-md-3">
+                                <label>Estado</label>
+                                <select class="form-control" required>
+                                    <option>Choose...</option>
+                                    <option>Alagoas (AL)</option>
+                                    <option>Amapá (AP)</option>
+                                    <option>Amazonas (AM)</option>
+                                    <option>Bahia (BA)</option>
+                                    <option>Ceará (CE)</option>
+                                    <option>Distrito Federal (DF)</option>
+                                    <option>Espírito Santo (ES)</option>
+                                    <option>Goiás (GO)</option>
+                                    <option>Maranhão (MA)</option>
+                                    <option>Mato Grosso (MT)</option>
+                                    <option>Mato Grosso do Sul (MS)</option>
+                                    <option>Minas Gerais (MG)</option>
+                                    <option>Pará (PA)</option>
+                                    <option>Paraíba (PB)</option>
+                                    <option>Paraná (PR)</option>
+                                    <option>Pernambuco (PE)</option>
+                                    <option>Piauí (PI)</option>
+                                    <option>Rio de Janeiro (RJ)</option>
+                                    <option>Rio Grande do Norte (RN)</option>
+                                    <option>Rio Grande do Sul (RS)</option>
+                                    <option>Rondônia (RO)</option>
+                                    <option>Roraima (RR)</option>
+                                    <option>Santa Catarina (SC)</option>
+                                    <option>São Paulo (SP)</option>
+                                    <option>Sergipe (SE)</option>
+                                    <option>Tocantins (TO)</option>
+                                </select>
+                            </div>
+    
+                            <div class="form-group col-md-3">
+                                <label>CPF</label>
+                                <input type="text" maxlength="11" class="form-control" required>
+                            </div>
+    
+                            <div class="form-group col-md-12">
+                                <div class="form-check">
+                                  <input class="form-check-input" type="checkbox">
+                                  <label class="form-check-label">
+                                    Aceito os termos e condições
+                                  </label>
+                                </div>
+                              </div>
+                              <button type="submit" class="btn btn-primary">Enviar</button>
+
+                        </div> <!--fim form-->
+                    </fieldset>
+                </form>
+            </section>
+            <!-- fim cadastro -->
+        </div>
+
+        <!--inicio rodape-->
+        <footer class="mt-4 bgDark">
+            <div class="borda">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            Conteúdos:
+                        </div>
+                        <div class="col-sm-6">
+                            Atendimentos:
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="borda">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-6 d-flex flex-column">
+                            <a href="#">Fale conosco</a>
+                            <a href="#">Meios de pagamento e de frete</a>
+                            <a href="#">Política de privacidade</a>
+                            <a href="#">Política de Trocas e Devolução</a>
+                            <a href="#">Quem somos</a>
+                        </div>
+                        <div class="col-sm-6 d-flex flex-column">
+                           <a href="">Telefone: 4002-8922</a>
+                           <a href="">Whatsapp: 11 99229-1289</a>
+                           <a href="">Seg. a Sexta 8:00H as 18:00H</a>
+                           <a href="">Endereço: Rua dos Bobos, n° 0 -SP</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--fim rodape-->
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+
+        <script src="js/script.js"></script>
+    </body>
+
+</html>
