@@ -143,4 +143,31 @@ footer a:hover{
     .btnAnterior, .btnProximo{
         display: none;
     }
+    .indicador{
+        display: none;
+    }
+    h2{
+        margin-top: 10px;
+        font-size: 1.2em;
+    }
+    #produtos{
+        width: 500px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .cardProdutos{
+        width: 120px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .cardProdutos img{
+        height: 200px;
+    }
+    .cardProdutos button{
+        width: 100px;
+        font-size: 0.5em;
+    }
+    #input-header{
+        width: 150px;
+    }
 }
